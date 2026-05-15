@@ -11,7 +11,7 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import { MainNav } from "@/components/main-nav";
-import { Logo } from "@/components/icons";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -77,10 +77,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         >
           <SidebarHeader className="p-4">
             <div className="flex items-center gap-2">
-              <Logo className="size-8 text-primary group-data-[collapsible=icon]:mx-auto" />
+              <Image src="https://res.cloudinary.com/drswibb0s/image/upload/v1778879112/icon_o6l0o6.png" alt="Kenworth" width={36} height={36} className="rounded-lg group-data-[collapsible=icon]:mx-auto" />
               <div className="flex flex-col group-data-[collapsible=icon]:hidden">
                 <h1 className="text-xl font-headline font-semibold text-primary-foreground">
-                  KW
+                  KENWORTH BAJIO
                 </h1>
                 <p className="text-sm text-muted-foreground">Inventory</p>
               </div>

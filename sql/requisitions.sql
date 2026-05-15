@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-04-2026 a las 18:26:26
+-- Tiempo de generación: 15-05-2026 a las 17:51:59
 -- Versión del servidor: 11.8.6-MariaDB-log
 -- Versión de PHP: 7.2.34
 
@@ -31,8 +31,8 @@ CREATE TABLE `requisitions` (
   `id` int(11) NOT NULL,
   `request_id` varchar(20) NOT NULL,
   `type` enum('Requisition','Transfer') NOT NULL,
-  `item_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 0,
   `from_warehouse_id` int(11) DEFAULT NULL,
   `to_warehouse_id` int(11) DEFAULT NULL,
   `to_destination` varchar(255) DEFAULT NULL,
@@ -45,6 +45,13 @@ CREATE TABLE `requisitions` (
   `observaciones` text DEFAULT NULL,
   `folio_sitic` varchar(50) DEFAULT NULL COMMENT 'Número de transferencia generado en SITIC (seguimiento oficial)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `requisitions`
+--
+
+INSERT INTO `requisitions` (`id`, `request_id`, `type`, `item_id`, `quantity`, `from_warehouse_id`, `to_warehouse_id`, `to_destination`, `status`, `notes`, `created_at`, `updated_at`, `from_sub_warehouse_id`, `to_sub_warehouse_id`, `observaciones`, `folio_sitic`) VALUES
+(1, '800440', 'Transfer', NULL, 0, 5, 5, NULL, 'In Transit', NULL, '2026-03-27 12:00:00', '2026-05-14 22:27:21', 2, 3, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -73,7 +80,7 @@ ALTER TABLE `requisitions`
 -- AUTO_INCREMENT de la tabla `requisitions`
 --
 ALTER TABLE `requisitions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

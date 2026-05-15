@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-04-2026 a las 18:25:57
+-- Tiempo de generación: 15-05-2026 a las 17:51:30
 -- Versión del servidor: 11.8.6-MariaDB-log
 -- Versión de PHP: 7.2.34
 
@@ -38,6 +38,13 @@ CREATE TABLE `consumption_corrections_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `consumption_corrections_log`
+--
+
+INSERT INTO `consumption_corrections_log` (`id`, `action`, `record_id`, `records_affected`, `changed_by`, `details`, `created_at`) VALUES
+(1, 'delete', NULL, 87, 'system', 'Borrado parcial por ids (87)', '2026-04-02 21:44:58');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -57,7 +64,7 @@ ALTER TABLE `consumption_corrections_log`
 -- AUTO_INCREMENT de la tabla `consumption_corrections_log`
 --
 ALTER TABLE `consumption_corrections_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
-import { Logo } from "@/components/icons";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -54,7 +54,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            <Logo className="size-16 text-primary" />
+            <Image src="https://res.cloudinary.com/drswibb0s/image/upload/v1778879112/icon_o6l0o6.png" alt="Kenworth" width={80} height={80} className="rounded-2xl" priority />
           </div>
           <div>
             <CardTitle className="text-2xl font-headline">

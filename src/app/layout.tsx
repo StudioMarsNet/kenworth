@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: 'KW Inventory System',
   description: 'Sistema de control de inventario, ventas y reportes para Kenworth.',
+  icons: {
+    icon: 'https://res.cloudinary.com/drswibb0s/image/upload/v1778879112/icon_o6l0o6.png',
+    apple: 'https://res.cloudinary.com/drswibb0s/image/upload/v1778879112/icon_o6l0o6.png',
+  },
 };
 
 export default function RootLayout({

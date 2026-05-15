@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-04-2026 a las 18:26:19
+-- Tiempo de generación: 15-05-2026 a las 17:51:53
 -- Versión del servidor: 11.8.6-MariaDB-log
 -- Versión de PHP: 7.2.34
 
@@ -53,8 +53,8 @@ CREATE TABLE `quotes` (
 --
 
 INSERT INTO `quotes` (`id`, `folio`, `folio_sitic`, `no_docto`, `cliente_id`, `cliente_nombre`, `vendedor`, `subtotal`, `iva`, `total`, `moneda`, `tipo_cambio`, `estatus`, `notas`, `vigencia`, `fecha_consumo`, `created_at`, `updated_at`) VALUES
-(1, 'COT-20260402-0001', NULL, NULL, 2, 'ATB', 'Juan Vendedor', 18397.65, 2943.62, 21341.27, 'MXN', 1.0000, 'enviada', NULL, '2026-04-01', '2026-03-02', '2026-04-02 17:54:22', '2026-04-02 18:20:50'),
-(2, 'COT-20260402-0002', '3625499', '4595', 2, 'ATB', 'Juan Vendedor', 8380.23, 1340.84, 9721.07, 'MXN', 1.0000, 'borrador', NULL, '2026-04-30', '2026-03-03', '2026-04-02 18:24:09', '2026-04-02 18:24:09');
+(7, 'COT-20260402-0001', '3634665', '4622', 2, 'ATB', NULL, 328986.62, 52637.86, 381624.48, 'MXN', 1.0000, 'borrador', NULL, NULL, '2026-03-17', '2026-04-02 22:18:30', '2026-04-02 22:18:30'),
+(8, 'COT-20260402-0002', '3644244', '4681', 2, 'ATB', 'Juan Vendedor', 284162.94, 45466.07, 329629.01, 'MXN', 1.0000, 'borrador', NULL, NULL, '2026-03-31', '2026-04-02 22:55:33', '2026-04-02 22:55:33');
 
 --
 -- Índices para tablas volcadas
@@ -76,7 +76,7 @@ ALTER TABLE `quotes`
 -- AUTO_INCREMENT de la tabla `quotes`
 --
 ALTER TABLE `quotes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas

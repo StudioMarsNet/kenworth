@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-04-2026 a las 18:26:29
+-- Tiempo de generación: 15-05-2026 a las 17:52:02
 -- Versión del servidor: 11.8.6-MariaDB-log
 -- Versión de PHP: 7.2.34
 
@@ -38,6 +38,14 @@ CREATE TABLE `requisition_approvals_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `requisition_approvals_log`
+--
+
+INSERT INTO `requisition_approvals_log` (`id`, `requisition_id`, `previous_status`, `new_status`, `changed_by`, `notes`, `created_at`) VALUES
+(1, 1, 'Pending', 'Approved', 'system', 'Cambio de estatus', '2026-05-14 21:33:07'),
+(2, 1, 'Approved', 'In Transit', 'system', 'Cambio de estatus', '2026-05-14 22:27:21');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -57,7 +65,7 @@ ALTER TABLE `requisition_approvals_log`
 -- AUTO_INCREMENT de la tabla `requisition_approvals_log`
 --
 ALTER TABLE `requisition_approvals_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

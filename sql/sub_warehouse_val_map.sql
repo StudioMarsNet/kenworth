@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-05-2026 a las 17:51:46
+-- Tiempo de generación: 15-05-2026 a las 17:52:07
 -- Versión del servidor: 11.8.6-MariaDB-log
 -- Versión de PHP: 7.2.34
 
@@ -24,36 +24,47 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `personnel`
+-- Estructura de tabla para la tabla `sub_warehouse_val_map`
 --
 
-CREATE TABLE `personnel` (
+CREATE TABLE `sub_warehouse_val_map` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(200) NOT NULL,
-  `rol` enum('vendedor','almacenista','gerente_almacen','gerente_ventas') NOT NULL,
-  `activo` tinyint(1) DEFAULT 1,
-  `created_at` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+  `val_code` varchar(30) NOT NULL,
+  `sub_warehouse_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `personnel`
+-- Indices de la tabla `sub_warehouse_val_map`
 --
-ALTER TABLE `personnel`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `sub_warehouse_val_map`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uq_subwh_val_code` (`val_code`),
+  ADD KEY `fk_subwh_val_map_sw` (`sub_warehouse_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `personnel`
+-- AUTO_INCREMENT de la tabla `sub_warehouse_val_map`
 --
-ALTER TABLE `personnel`
+ALTER TABLE `sub_warehouse_val_map`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `sub_warehouse_val_map`
+--
+ALTER TABLE `sub_warehouse_val_map`
+  ADD CONSTRAINT `fk_subwh_val_map_sw` FOREIGN KEY (`sub_warehouse_id`) REFERENCES `sub_warehouses` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
